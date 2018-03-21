@@ -1,4 +1,3 @@
-// const src = __dirname + "/app/assests/stylesheets/cw-core";
 const dist = __dirname + "/dist"
 
 var webpack = require('webpack');
