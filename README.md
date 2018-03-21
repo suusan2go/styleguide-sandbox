@@ -12,5 +12,5 @@ $ npm install yarn -g
 
 # start styleguide
 ```bash
-$ yarn run webpack-serve
+$ yarn run dev
 ```
