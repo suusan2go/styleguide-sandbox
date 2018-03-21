@@ -1,11 +1,12 @@
 // const src = __dirname + "/app/assests/stylesheets/cw-core";
-const dist = __dirname + "/styleguide/dist"
+const dist = __dirname + "/dist"
 
 var webpack = require('webpack');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
+  mode: 'development',
   entry: "./styleguide/index.js",
   output: {
     path: dist,
@@ -25,14 +26,7 @@ module.exports = {
         test: /\.scss/,
         use: [
           'style-loader',
-          {
-            loader: 'css-loader',
-            options: {
-              url: false,
-              sourceMap: true,
-              importLoaders: 2
-            },
-          },
+          'css-loader',
           {
             loader: 'sass-loader',
             options: {
@@ -44,7 +38,6 @@ module.exports = {
     ],
   },
   plugins: [
-    new UglifyJSPlugin(),
     new HtmlWebpackPlugin({
       template: "./styleguide/index.html"
     })
